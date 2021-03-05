@@ -1,0 +1,59 @@
+{
+    "name": "changjiangyuketang",
+    "version": "1.0.0",
+    "description": "长江雨课堂",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "electron .",
+        "dist:w64": "electron-builder --win --x64 --publish never",
+        "dist:w32": "electron-builder --win --ia32 --publish never",
+        "dist:wa64": "electron-builder --win --arm64 --publish never",
+        "dist:l64": "electron-builder --linux --x64 --publish never",
+        "dist:l32": "electron-builder --linux --ia32 --publish never",
+        "dist:m": "electron-builder --mac --x64 --publish never"
+    },
+    "keywords": [
+        "yuketang",
+        "changjiangyuketang"
+    ],
+    "build": {
+        "productName": "长江雨课堂",
+        "artifactName": "${productName} Setup-${os}-${platform}-${arch}-${version}.${ext}",
+        "appId": "com.gloomyghost.changjiangyuketang",
+        "mac": {
+            "category": "com.gloomyghost.changjiangyuketang",
+            "icon": "./src/images/logo.png",
+            "target": [
+                "dmg"
+            ]
+        },
+        "win": {
+            "icon": "./src/images/logo.png",
+            "target": [
+                "nsis"
+            ]
+        },
+        "linux": {
+            "icon": "./src/images/logo.png",
+            "target": [
+                "deb",
+                "rpm",
+                "pacman"
+            ]
+        },
+        "nsis": {
+            "oneClick": false,
+            "perMachine": true,
+            "allowElevation": true,
+            "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true
+        }
+    },
+    "author": "YuzukiTsuru",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^12.0.0",
+        "electron-builder": "^22.10.5"
+    }
+}
