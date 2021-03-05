@@ -21,5 +21,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm i yarn -g
+    - run: apt install wine -y
     - run: yarn
     - run: yarn dist:w64
+    
