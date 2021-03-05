@@ -20,7 +20,6 @@
         "productName": "长江雨课堂",
         "artifactName": "${productName} Setup-${os}-${platform}-${arch}-${version}.${ext}",
         "appId": "com.gloomyghost.changjiangyuketang",
-        "email": "gloomyghost@gloomyghost.com",
         "mac": {
             "category": "com.gloomyghost.changjiangyuketang",
             "icon": "./src/images/logo.png",
