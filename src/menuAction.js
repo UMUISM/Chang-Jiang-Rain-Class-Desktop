@@ -1,4 +1,7 @@
 const app = require('electron')
+
+const aboutWindow = require('./aboutWindow')
+
 const isMac = process.platform === 'darwin'
 
 const template = [
@@ -77,6 +80,17 @@ const template = [
             ] : [
                 { role: 'close', label: '关闭' }
             ])
+        ]
+    },
+    {
+        label: '帮助',
+        submenu: [
+            {
+                label: '关于',
+                click: () => {
+                    aboutWindow()
+                }
+            }
         ]
     }
 ]
