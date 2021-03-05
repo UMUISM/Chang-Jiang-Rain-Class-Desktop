@@ -1,6 +1,6 @@
 {
     "name": "changjiangyuketang",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "长江雨课堂",
     "main": "src/index.js",
     "scripts": {

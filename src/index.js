@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, Menu } = require('electron')
+const { app, BrowserWindow, dialog, Menu } = require('electron')
 const menuAction = require("./menuAction")
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -26,6 +26,28 @@ function createWindow() {
 
     // Open the DevTools.
     // mainWindow.webContents.openDevTools()
+
+    // close dialog
+    mainWindow.on('close', e => {
+        e.preventDefault();
+        dialog.showMessageBox({
+            type: 'info',
+            title: '提示',
+            message: '确认退出？',
+            buttons: ['确认', '取消'],
+            cancelId: 1,
+        }).then(idx => {
+            console.log(idx)
+            if (idx.response == 1) {
+                console.log('index==1，取消关闭')
+                e.preventDefault();
+            } else {
+                console.log('index==0，关闭')
+                mainWindow = null
+                app.exit();
+            }
+        })
+    });
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {
