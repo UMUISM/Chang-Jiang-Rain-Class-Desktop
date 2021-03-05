@@ -37,9 +37,7 @@
         "linux": {
             "icon": "./src/images/logo.png",
             "target": [
-                "deb",
-                "rpm",
-                "pacman"
+                "appImage"
             ]
         },
         "nsis": {
