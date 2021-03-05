@@ -90,7 +90,15 @@ const template = [
                 click: () => {
                     aboutWindow()
                 }
+            },
+            {
+                label: '检查更新',
+                click: async () => {
+                    const { shell } = require('electron')
+                    await shell.openExternal('https://github.com/UMUISM/Chang-Jiang-Rain-Class-Desktop/releases')
+                }
             }
+
         ]
     }
 ]
